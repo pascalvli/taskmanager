@@ -1,14 +1,15 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// Get the correct port from Render
-const PORT = process.env.PORT || 3000;
+export default defineConfig(() => {
+  const port = Number(import.meta.env.VITE_PORT) || 3000; // Use Vite's env system
 
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    port: PORT, // Use the Render-assigned port
-    strictPort: true,
-    host: "0.0.0.0", // Allow external access
-  },
+  return {
+    plugins: [react()],
+    server: {
+      port,
+      strictPort: true,
+      host: "0.0.0.0", // Required for Render
+    },
+  };
 });
