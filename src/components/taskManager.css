@@ -1,0 +1,11 @@
+.task-container {
+    width: 100%;
+    max-width: 650px;
+    background: #f3f3f3;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    flex: 1 1 auto;
+}

@@ -1,0 +1,51 @@
+.task__input {
+    width: 60%; /* Make it take full width of the container */
+    max-width: 400px; /* Prevent it from being too wide */
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 2px; /* Rounded corners */
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+  }
+  
+  .task__input-header {
+    padding: 10px;
+    width: auto;
+    background-color: rgb(43, 131, 213);
+  }
+  .task__input-header input {
+    height: 1rem;
+    background-color: white;
+  }
+
+
+  .task__input-header button {
+    background-color: transparent;
+  }
+
+  .task__input:focus {
+    border-color: #d5d5d5; /* Green border on focus */
+    
+  }
+  .task__input-button {
+    background-color: white;
+  }
+  .task__input-icon {
+    height: 15px;
+    width: 15px;
+    opacity: 0.5;
+  }
+
+  .task__input-icon:hover {
+    opacity: 1;
+  }
+
+
+  .tasks-list__addForm {
+    width: auto;
+    border: none
+  }
+  .tasks-list__addForm .task__input-button {
+    background: #f3f3f3;
+  }

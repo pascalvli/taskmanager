@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: #fff;
+  padding: 0  0 15px 0;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  overflow-y: hidden;
+
+}
+
+.task__summary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.task__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  background-color: rgb(33, 124, 210);
+  position: relative;
+  margin-bottom: .5rem;
+  overflow-y: hidden;
+}
+
+.task__header-controls {
+  display: flex;
+  gap: 3px;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  padding-right: 3px;
+}
+.task__header-button {
+  font-size: 8px;
+  font-weight: 200;
+  padding: 0 2px ;
+  margin: 0;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  background-color: rgb(43, 131, 213);
+  color: white;
+  border: none;
+  transition: transform 0.2s ease-out;
+  border: 1px solid rgb(35, 129, 217);
+}
+.task__header-button:hover {
+  transform: translateY(-1px);
+}
+
+
+.task__main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.task__title {
+  font-size: .8rem;
+  font-weight: 600;
+  color: #fcfcfc;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.task__toggle {
+  padding-left: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+}
+
+.task__toggle-icon {
+  height: 15px;
+  width: 15px;
+  transition: transform 0.3s ease-in-out;
+  filter: brightness(0) invert(1);
+ 
+
+}
+
+.task__toggle-icon-fold {
+  transform: rotate(-90deg);
+}
+
+.task__toggle-icon-unfold {
+  transform: rotate(0deg);
+}
+
+.task__completion {
+  margin-right: 1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+
+.task__progressbar {
+ 
+  margin:  0 1rem 0 1rem;
+  width: auto;
+  height: 10px;
+  border-radius: 5px;
+  background: #eee;
+  overflow: hidden;
+  margin-top: 8px;
+  
+}
+
+.task__progressbar-length {
+  height: 100%;
+  background: #4CAF50;
+  transition: width 0.3s ease-in-out;
+}
+
+.task__details {
+  padding-top: 10px;
+}
+
+.task__details ol {
+  list-style: none;
+  padding: 0;
+}
+
+.task__details li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.task__details li:last-child {
+  border-bottom: none;
+}
+
+.task__details hr {
+  border: none;
+  height: 1px;
+  background: #ddd;
+  margin: 5px 0;
+}
+
+

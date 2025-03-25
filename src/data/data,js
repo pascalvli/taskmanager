@@ -1,0 +1,24 @@
+export const initialState = [
+  {
+    task: "wash the car",
+    id: 1,
+    subTasks: [
+      { title: "buy soap", id: 11, isComplete: false },
+      { title: "buy hose", id: 12, isComplete: false },
+    ],
+    isTaskFolded: true,
+    status: "active",
+    completion: 0,
+  },
+  {
+    task: "go to restaurant",
+    id: 2,
+    subTasks: [
+      { title: "choose restaurant", id: 21, isComplete: false },
+      { title: "make reservation", id: 22, isComplete: false },
+    ],
+    isTaskFolded: true,
+    status: "active",
+    completion: 0,
+  },
+];
