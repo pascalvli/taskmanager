@@ -1,8 +1,9 @@
 .task-container {
     width: 100%;
     max-width: 650px;
-    background: #f3f3f3;
+    background: #edf0f1;
     padding: .5rem;
+    padding-bottom: 2rem;
     border-radius: 6px;
     border: 1px solid #ddd;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);

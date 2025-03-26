@@ -128,6 +128,7 @@ export default function Task({ task, id, subTasks, isTaskFolded }) {
               taskId={id}
               onSubmit={addSubTask}
               placeHolder='add new subtask'
+              className='subTask__addForm'
             ></AddForm>
           </section>
         )}
