@@ -193,7 +193,6 @@ export default function useTaskReducer() {
   const moveUp = (payload) => dispatch({ type: MOVEUP, payload });
   // const dragSubTask = (payload) => dispatch({ type: DRAG_SUBTASK, payload });
   const dropSubTask = (payload) => dispatch({ type: DROP_SUBTASK, payload });
-
   const toggleSubTaskStatus = (payload) =>
     dispatch({ type: TOGGLESUBTASKSTATUS, payload });
 

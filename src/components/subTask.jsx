@@ -23,13 +23,14 @@ export default function SubTask({ taskId, title, id: subTaskId, isComplete }) {
       {!isEdit && (
         <article className={`subTask subTask${isComplete ? "-completed" : ""}`}>
           <section className='subTask__main'>
-            <img
+            {/* <img
               className='subTask__main-icon'
               src='/icons/drag.svg'
               alt='hamburger'
-            />
+            /> */}
             <input
               className='subTask__toggle'
+              checked={isComplete}
               type='checkbox'
               name='toggle'
               onChange={() => {

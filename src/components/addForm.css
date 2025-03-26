@@ -1,6 +1,6 @@
 .task__input {
     width: 60%; /* Make it take full width of the container */
-    max-width: 400px; /* Prevent it from being too wide */
+    max-width: 800px; /* Prevent it from being too wide */
     padding: 0px;
     border: 1px solid #ccc;
     border-radius: 2px; /* Rounded corners */
@@ -11,12 +11,15 @@
   
   .task__input-header {
     padding: 10px;
-    width: auto;
+    width: 100%;
     background-color: rgb(43, 131, 213);
+    
   }
   .task__input-header input {
-    height: 1rem;
+    font-size: 1.5rem;
+    height: 3rem;
     background-color: white;
+    text-align: left;
   }
 
 
@@ -32,8 +35,8 @@
     background-color: white;
   }
   .task__input-icon {
-    height: 15px;
-    width: 15px;
+    height: 24px;
+    width: 24px;
     opacity: 0.5;
   }
 

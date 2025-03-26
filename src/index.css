@@ -10,7 +10,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 0;
 }
 
 a {
@@ -27,7 +26,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  display: flex;
+  /* display: flex; */
   min-height: 100vh;
   background: linear-gradient(150deg, rgba(94,138,255,1) 0%, rgba(4,84,102,1) 100%);
 
