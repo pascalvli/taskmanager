@@ -2,17 +2,12 @@ import "./task.css";
 
 import AddForm from "./AddForm";
 import { useState, useEffect } from "react";
-import useTaskContext from "../Store/useTaskContext";
+import useTask from "../Store/useTask";
 import SubTask from "./subTask";
+
 export default function Task({ task, id, subTasks, isTaskFolded }) {
-  const {
-    toggleFold,
-    addSubTask,
-    deleteTask,
-    editTask,
-    // dragSubTask,
-    dropSubTask,
-  } = useTaskContext();
+  const { toggleFold, deleteTask, editTask, addSubTask } = useTask();
+
   const [completion, setCompletion] = useState(0);
   const [isEdit, setIsEdit] = useState(false);
 
@@ -90,34 +85,7 @@ export default function Task({ task, id, subTasks, isTaskFolded }) {
           >
             <ol>
               {subTasks.map((subtask) => (
-                <li
-                  key={subtask.id}
-                  draggable
-                  onDragStart={(e) => {
-                    e.dataTransfer.setData(
-                      "sourceIndex",
-                      subTasks.findIndex((st) => st.id === subtask.id)
-                    );
-                  }}
-                  onDragOver={(e) => e.preventDefault()}
-                  onDrop={(e) => {
-                    e.preventDefault();
-                    const sourceIndex = Number(
-                      e.dataTransfer.getData("sourceIndex")
-                    );
-                    const destinationIndex = subTasks.findIndex(
-                      (st) => st.id === subtask.id
-                    );
-
-                    if (sourceIndex !== destinationIndex) {
-                      dropSubTask({
-                        taskId: id,
-                        sourceIndex,
-                        destinationIndex,
-                      });
-                    }
-                  }}
-                >
+                <li key={subtask.id}>
                   <SubTask taskId={id} {...subtask}></SubTask>
                   <hr />
                 </li>

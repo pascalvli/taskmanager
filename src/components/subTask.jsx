@@ -1,13 +1,38 @@
 import "./subTask.css";
 
-import useTaskContext from "../Store/useTaskContext";
 import AddForm from "./AddForm";
 import { useState } from "react";
+import useSubTask from "../Store/useSubTask";
 
 export default function SubTask({ taskId, title, id: subTaskId, isComplete }) {
   const [isEdit, setIsEdit] = useState(false);
   const { saveSubTask, toggleSubTaskStatus, deleteSubTask, moveUp, moveDown } =
-    useTaskContext();
+    useSubTask();
+
+  let timer;
+  function handleMouseDown() {
+    timer = setTimeout(() => {
+      setIsEdit((prev) => !prev);
+    }, 500);
+  }
+  //mobile friendly variant
+  function handleTouchStart() {
+    timer = setTimeout(() => {
+      setIsEdit((prev) => !prev);
+    }, 500);
+  }
+
+  function handleMouseUp() {
+    clearTimeout(timer);
+  }
+
+  function handleMouseLeave() {
+    clearTimeout(timer);
+  }
+  function handleTouchEnd() {
+    clearTimeout(timer);
+  }
+
   return (
     <>
       {isEdit && (
@@ -23,11 +48,6 @@ export default function SubTask({ taskId, title, id: subTaskId, isComplete }) {
       {!isEdit && (
         <article className={`subTask subTask${isComplete ? "-completed" : ""}`}>
           <section className='subTask__main'>
-            {/* <img
-              className='subTask__main-icon'
-              src='/icons/drag.svg'
-              alt='hamburger'
-            /> */}
             <input
               className='subTask__toggle'
               checked={isComplete}
@@ -37,21 +57,18 @@ export default function SubTask({ taskId, title, id: subTaskId, isComplete }) {
                 toggleSubTaskStatus({ taskId, subTaskId });
               }}
             />
-            <p className='subTask__title'>{title}</p>
+            <p
+              className='subTask__title'
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseLeave}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              {title}
+            </p>
           </section>
           <section className='subTask__controls'>
-            <button
-              className='subTask__controls-edit'
-              onClick={() => {
-                setIsEdit((prev) => !prev);
-              }}
-            >
-              <img
-                className='subTask__controls-icon'
-                src='/icons/pencil.svg'
-                alt='pencil'
-              />
-            </button>
             <button
               className='subTask__controls-delete'
               onClick={() => {

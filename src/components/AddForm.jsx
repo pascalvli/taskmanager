@@ -10,6 +10,7 @@ export default function AddForm({
   placeHolder,
   className,
 }) {
+  console.log("onSubmit:", onSubmit);
   const [editTitle, setEditTitle] = useState(title || "");
 
   function handleSubmit(e) {

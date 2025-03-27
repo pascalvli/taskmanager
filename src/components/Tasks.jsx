@@ -1,9 +1,15 @@
-import useTaskContext from "../Store/useTaskContext";
+// import useTaskContext from "../Store/useTaskContext";
 import "./tasks.css";
 import Task from "./Task";
 import AddForm from "./AddForm";
+import useTasks from "../Store/useTasks";
+import useTask from "../Store/useTask";
+
 export default function Tasks() {
-  const { state, addTask } = useTaskContext();
+  const state = useTasks();
+  console.log("state:", state);
+  const { addTask } = useTask();
+  // const { state, addTask } = useTaskContext();
   console.log("state in Tasks.jsx:", state);
 
   return (

@@ -21,7 +21,7 @@ justify-content: space-between;
 
 
 .subTask__controls button {
-    padding: 0
+    padding-right: 5px;
 }
 
 
